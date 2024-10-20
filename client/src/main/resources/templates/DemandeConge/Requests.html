@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Leave requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <style>
+        .header {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-primary {
+            margin-right: 5px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+<div th:include="index :: navbar"></div>
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header header">
+            <h2 class="mb-0">Leave requests</h2>
+        </div>
+        <div class="card-body">
+            <div th:switch="${demandesConges}">
+                <div th:case="null" class="alert alert-warning">
+                    No Leave request found !! Please add some Leave requests.
+                </div>
+                <div th:case="*">
+                    <table class="table table-striped table-responsive-md">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Employee</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="demandeConge : ${demandesConges}">
+                            <td th:text="${demandeConge.employee.email}"></td>
+                            <td th:text="${demandeConge.startDate}"></td>
+                            <td th:text="${demandeConge.endDate}"></td>
+                            <td>
+                                <form th:action="@{/leaveRequest/updateStatus/{id}(id=${demandeConge.id})}" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="status" value="ACCEPTED">
+                                    <button type="submit" class="btn btn-success">Accept</button>
+                                </form>
+                                <form th:action="@{/leaveRequest/updateStatus/{id}(id=${demandeConge.id})}" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="status" value="REJECTED">
+                                    <button type="submit" class="btn btn-danger">Refuse</button>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
