@@ -54,6 +54,7 @@ public interface DemandeConge {
 
     /**
      * 
+     * @param arg0
      * @return
      *     returns java.util.List<proxy.proxyDemandeConge.DemandeConge_Type>
      */
@@ -62,10 +63,13 @@ public interface DemandeConge {
     @RequestWrapper(localName = "ListMesDemandesConges", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.ListMesDemandesConges")
     @ResponseWrapper(localName = "ListMesDemandesCongesResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.ListMesDemandesCongesResponse")
     @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/ListMesDemandesCongesRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/ListMesDemandesCongesResponse")
-    public List<DemandeConge_Type> listMesDemandesConges();
+    public List<DemandeConge_Type> listMesDemandesConges(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
+     * @param arg0
      * @return
      *     returns java.util.List<proxy.proxyDemandeConge.DemandeConge_Type>
      */
@@ -74,19 +78,24 @@ public interface DemandeConge {
     @RequestWrapper(localName = "ListDepartementConges", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.ListDepartementConges")
     @ResponseWrapper(localName = "ListDepartementCongesResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.ListDepartementCongesResponse")
     @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/ListDepartementCongesRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/ListDepartementCongesResponse")
-    public List<DemandeConge_Type> listDepartementConges();
+    public List<DemandeConge_Type> listDepartementConges(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
      * @param arg0
+     * @return
+     *     returns proxy.proxyDemandeConge.DemandeConge_Type
      */
-    @WebMethod(operationName = "UpdateDemandeConge")
-    @RequestWrapper(localName = "UpdateDemandeConge", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.UpdateDemandeConge")
-    @ResponseWrapper(localName = "UpdateDemandeCongeResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.UpdateDemandeCongeResponse")
-    @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeResponse")
-    public void updateDemandeConge(
+    @WebMethod(operationName = "AddDemandeConge")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AddDemandeConge", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.AddDemandeConge")
+    @ResponseWrapper(localName = "AddDemandeCongeResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.AddDemandeCongeResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeResponse")
+    public DemandeConge_Type addDemandeConge(
         @WebParam(name = "arg0", targetNamespace = "")
-        DemandeConge_Type arg0);
+        String arg0);
 
     /**
      * 
@@ -108,15 +117,15 @@ public interface DemandeConge {
 
     /**
      * 
-     * @return
-     *     returns proxy.proxyDemandeConge.DemandeConge_Type
+     * @param arg0
      */
-    @WebMethod(operationName = "AddDemandeConge")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AddDemandeConge", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.AddDemandeConge")
-    @ResponseWrapper(localName = "AddDemandeCongeResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.AddDemandeCongeResponse")
-    @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeResponse")
-    public DemandeConge_Type addDemandeConge();
+    @WebMethod(operationName = "DeleteDemandeConge")
+    @RequestWrapper(localName = "DeleteDemandeConge", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.DeleteDemandeConge")
+    @ResponseWrapper(localName = "DeleteDemandeCongeResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.DeleteDemandeCongeResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeResponse")
+    public void deleteDemandeConge(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 
@@ -137,12 +146,12 @@ public interface DemandeConge {
      * 
      * @param arg0
      */
-    @WebMethod(operationName = "DeleteDemandeConge")
-    @RequestWrapper(localName = "DeleteDemandeConge", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.DeleteDemandeConge")
-    @ResponseWrapper(localName = "DeleteDemandeCongeResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.DeleteDemandeCongeResponse")
-    @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeResponse")
-    public void deleteDemandeConge(
+    @WebMethod(operationName = "UpdateDemandeConge")
+    @RequestWrapper(localName = "UpdateDemandeConge", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.UpdateDemandeConge")
+    @ResponseWrapper(localName = "UpdateDemandeCongeResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDemandeConge.UpdateDemandeCongeResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeRequest", output = "http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeResponse")
+    public void updateDemandeConge(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        DemandeConge_Type arg0);
 
 }

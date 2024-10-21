@@ -15,14 +15,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 @WebService(name= "User")
-public class UserController  extends SpringBeanAutowiringSupport {
+public class UserController {
     @Autowired
     private UserService userService;
     @Autowired
@@ -33,20 +30,28 @@ public class UserController  extends SpringBeanAutowiringSupport {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
     }
     @WebMethod(operationName = "ListUsers")
-    public List<User> ListUsers(){
-        return userService.getAllUsers();
+    public List<Integer> listUsers() {
+        List<User> users = userService.getAllUsers();
+        List<Integer> userIdList = new ArrayList<>();
+        for (User user : users) {
+            userIdList.add(user.getId());
+        }
+        return userIdList;
+    }
+    @WebMethod(operationName = "ListUser")
+    public User listUser(int id) {
+        return userService.getUserById(id);
     }
     @WebMethod(operationName = "addUser")
-    public Object[] addUser() {
-        User user = new User();
-        List<Departement> departments = departmentService.getAllDepartments();
-        List<String> privileges = Arrays.asList("admin", "hr", "manager", "employee");
-        return new Object[] { user, departments, privileges };
+    public User addUser() {
+        return new User();
     }
     @WebMethod(operationName = "SaveUser")
-    public void save (Object[] request) {
-        User user = (User) request[0];
-        String privilege = (String) request[1];
+    public void SaveUser(int id, String email, String password,int department,String privilege) {
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setDepartement(departmentService.getDepartmentById(department));
         switch (privilege) {
             case "admin":
                 user.setHr(true);
@@ -61,21 +66,23 @@ public class UserController  extends SpringBeanAutowiringSupport {
                 user.setManager(true);
                 break;
             case "employee":
-            default:
                 user.setHr(false);
                 user.setManager(false);
                 break;
         }
-        userService.registerUser(user);
+
+        userService.saveUser(user);
     }
     @WebMethod(operationName = "EditUser")
-    public  Object[] EditUser(int id) {
-        User user = userService.getUserById(id);
-        List<Departement> departments = departmentService.getAllDepartments();
-        return new Object[] { user, departments };
+    public  User EditUser(int id) {
+        return userService.getUserById(id);
     }
     @WebMethod(operationName = "UpdateUser")
-    public void UpdateUser(User user,String privilege) {
+    public void UpdateUser(int id, String email, String password,int department,String privilege) {
+        User user = userService.getUserById(id);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setDepartement(departmentService.getDepartmentById(department));
         switch (privilege) {
             case "admin":
                 user.setHr(true);
@@ -102,9 +109,11 @@ public class UserController  extends SpringBeanAutowiringSupport {
         userService.deleteUser(id);
     }
     @WebMethod(operationName = "ShowUser")
-    public Object[] showUser(int userId) {
-        User user = userService.getUserById(userId);
-        List<DemandeConge> demandesConges = demandeCongeService.getDemandeCongeByEmployeeId(userId);
-        return new Object[] { user, demandesConges };
+    public User showUser(int userId) {
+        return userService.getUserById(userId);
+    }
+    @WebMethod(operationName = "ShowUserDemandeConge")
+    public List<DemandeConge> showUserDemandeConge(int userId) {
+        return demandeCongeService.getDemandeCongeByEmployeeId(userId);
     }
 }

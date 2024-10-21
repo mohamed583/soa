@@ -1,9 +1,7 @@
 package com.management.cooolab.Controllers;
 
 
-import com.management.cooolab.Services.DepartmentService;
-import com.management.cooolab.Services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,20 +9,15 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import proxy.proxyDepartment.Departement;
 import proxy.proxyDepartment.DepartmentControllerService;
-import proxy.proxyUser.User;
-import proxy.proxyUser.UserControllerService;
+import proxy.proxyDepartment.User;
 import proxy.proxyDepartment.Department;
 
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping("/department")
 public class DepartmentController {
-    @Autowired
-    private DepartmentService departmentService;
-    @Autowired
-    private UserService userService;
+
     Department proxy = new DepartmentControllerService().getDepartmentPort();
     @GetMapping("/list")
     public String ListDepartments(Model model){
@@ -40,7 +33,7 @@ public class DepartmentController {
     }
     @PostMapping("/save")
     public  String save (@ModelAttribute("departement") Departement departement){
-        proxy.saveDepartment(departement);
+        proxy.updateDepartment(departement);
         return "redirect:/department/list";
     }
     @GetMapping("/edit/{id}")
@@ -64,9 +57,9 @@ public class DepartmentController {
     }
     @GetMapping("/show/{id}")
     public String showDepartment(@PathVariable("id") int id, Model model) {
-        Object[] objects = proxy.showDepartment(id).toArray();
-        List<User> users = (List<User>) objects[0];
-        Departement department = (Departement) objects[1];
+
+        List<User> users = proxy.showDepartmentUsers(id);
+        Departement department = proxy.showDepartment(id);
         if (department == null) {
             return "redirect:/department/list";
         }

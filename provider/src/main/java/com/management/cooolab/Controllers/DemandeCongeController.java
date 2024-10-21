@@ -7,6 +7,7 @@ import com.management.cooolab.Services.DemandeCongeService;
 import com.management.cooolab.Services.UserService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -17,36 +18,37 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import java.util.List;
 
 @Component
 @WebService(name= "DemandeConge")
 public class DemandeCongeController {
-
+@Autowired
     private UserDetailsService userDetailsService;
+    @Autowired
     private UserService userService;
+    @Autowired
     private DemandeCongeService demandeCongeService;
-
+    public DemandeCongeController() {
+        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
+    }
     @WebMethod(operationName = "ListMesDemandesConges")
-    public List<DemandeConge> ListMesDemandesConges(){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUserName = authentication.getName();
-
+    public List<DemandeConge> ListMesDemandesConges(String currentUserName){
         User currentUser = userService.getUsersByEmail(currentUserName);
         return demandeCongeService.getDemandeCongeByEmployeeId(currentUser.getId());
 
     }
     @WebMethod(operationName = "ListDepartementConges")
-    public List<DemandeConge> ListDepartementConges(){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUserName = authentication.getName();
+    public List<DemandeConge> ListDepartementConges(String currentUserName){
         User currentUser = userService.getUsersByEmail(currentUserName);
         Departement userDepartment = currentUser.getDepartement();
         return demandeCongeService.getAcceptedDemandesCongesByDepartment(userDepartment.getId());
     }
     @WebMethod(operationName = "ListDemandesConges")
-    public List<DemandeConge> ListDemandesConges(User user,List<String> authorities){
+    public List<DemandeConge> ListDemandesConges(User currentUser,List<String> authorities){
+        User user= userService.getUsersByEmail(currentUser.getEmail());
         if (user != null && authorities.contains("ROLE_ADMIN")) {
             return demandeCongeService.getDemandesCongesByStatus("ONHOLD");
         } else if (user != null && authorities.contains("ROLE_HR")) {
@@ -58,11 +60,9 @@ public class DemandeCongeController {
         }
     }
     @WebMethod(operationName = "AddDemandeConge")
-    public DemandeConge AddDemandeConge(){
+    public DemandeConge AddDemandeConge(String email){
         DemandeConge demandeConge = new DemandeConge();
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        String email = userDetails.getUsername();
+
         User currentUser = userService.getUsersByEmail(email);
 
         demandeConge.setEmployee(currentUser);

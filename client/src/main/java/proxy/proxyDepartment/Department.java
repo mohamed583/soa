@@ -27,15 +27,15 @@ public interface Department {
 
     /**
      * 
-     * @return
-     *     returns proxy.proxyDepartment.Departement
+     * @param arg0
      */
-    @WebMethod(operationName = "AddDepartment")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AddDepartment", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.AddDepartment")
-    @ResponseWrapper(localName = "AddDepartmentResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.AddDepartmentResponse")
-    @Action(input = "http://Controllers.cooolab.management.com/Department/AddDepartmentRequest", output = "http://Controllers.cooolab.management.com/Department/AddDepartmentResponse")
-    public Departement addDepartment();
+    @WebMethod(operationName = "SaveDepartment")
+    @RequestWrapper(localName = "SaveDepartment", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.SaveDemandeConge")
+    @ResponseWrapper(localName = "SaveDepartmentResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.SaveDemandeCongeResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/Department/SaveDepartmentRequest", output = "http://Controllers.cooolab.management.com/Department/SaveDepartmentResponse")
+    public void saveDepartment(
+        @WebParam(name = "arg0", targetNamespace = "")
+        DemandeConge arg0);
 
     /**
      * 
@@ -66,15 +66,15 @@ public interface Department {
 
     /**
      * 
-     * @param arg0
+     * @return
+     *     returns proxy.proxyDepartment.Departement
      */
-    @WebMethod(operationName = "SaveDepartment")
-    @RequestWrapper(localName = "SaveDepartment", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.SaveDemandeConge")
-    @ResponseWrapper(localName = "SaveDepartmentResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.SaveDemandeCongeResponse")
-    @Action(input = "http://Controllers.cooolab.management.com/Department/SaveDepartmentRequest", output = "http://Controllers.cooolab.management.com/Department/SaveDepartmentResponse")
-    public void saveDepartment(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Departement arg0);
+    @WebMethod(operationName = "AddDepartment")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AddDepartment", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.AddDepartment")
+    @ResponseWrapper(localName = "AddDepartmentResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.AddDepartmentResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/Department/AddDepartmentRequest", output = "http://Controllers.cooolab.management.com/Department/AddDepartmentResponse")
+    public Departement addDepartment();
 
     /**
      * 
@@ -107,14 +107,29 @@ public interface Department {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<java.lang.Object>
+     *     returns proxy.proxyDepartment.Departement
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "showDepartment", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.ShowDepartment")
     @ResponseWrapper(localName = "showDepartmentResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.ShowDepartmentResponse")
     @Action(input = "http://Controllers.cooolab.management.com/Department/showDepartmentRequest", output = "http://Controllers.cooolab.management.com/Department/showDepartmentResponse")
-    public List<Object> showDepartment(
+    public Departement showDepartment(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<proxy.proxyDepartment.User>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "showDepartmentUsers", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.ShowDepartmentUsers")
+    @ResponseWrapper(localName = "showDepartmentUsersResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyDepartment.ShowDepartmentUsersResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/Department/showDepartmentUsersRequest", output = "http://Controllers.cooolab.management.com/Department/showDepartmentUsersResponse")
+    public List<User> showDepartmentUsers(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 

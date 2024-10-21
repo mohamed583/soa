@@ -26,6 +26,25 @@ public interface Profile {
 
     /**
      * 
+     * @param arg0
+     * @param arg1
+     * @param arg2
+     */
+    @WebMethod
+    @RequestWrapper(localName = "updateProfile", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyProfile.UpdateProfile")
+    @ResponseWrapper(localName = "updateProfileResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyProfile.UpdateProfileResponse")
+    @Action(input = "http://Controllers.cooolab.management.com/Profile/updateProfileRequest", output = "http://Controllers.cooolab.management.com/Profile/updateProfileResponse")
+    public void updateProfile(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2);
+
+    /**
+     * 
+     * @param arg0
      * @return
      *     returns proxy.proxyProfile.User
      */
@@ -34,18 +53,8 @@ public interface Profile {
     @RequestWrapper(localName = "editProfile", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyProfile.EditProfile")
     @ResponseWrapper(localName = "editProfileResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyProfile.EditProfileResponse")
     @Action(input = "http://Controllers.cooolab.management.com/Profile/editProfileRequest", output = "http://Controllers.cooolab.management.com/Profile/editProfileResponse")
-    public User editProfile();
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "updateProfile", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyProfile.UpdateProfile")
-    @ResponseWrapper(localName = "updateProfileResponse", targetNamespace = "http://Controllers.cooolab.management.com/", className = "proxy.proxyProfile.UpdateProfileResponse")
-    @Action(input = "http://Controllers.cooolab.management.com/Profile/updateProfileRequest", output = "http://Controllers.cooolab.management.com/Profile/updateProfileResponse")
-    public void updateProfile(
+    public User editProfile(
         @WebParam(name = "arg0", targetNamespace = "")
-        User arg0);
+        String arg0);
 
 }

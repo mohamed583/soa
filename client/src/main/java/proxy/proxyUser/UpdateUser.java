@@ -16,8 +16,11 @@ import jakarta.xml.bind.annotation.XmlType;
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <element name="arg0" type="{http://Controllers.cooolab.management.com/}user" minOccurs="0"/>
+ *         <element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         <element name="arg1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="arg2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="arg3" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="arg4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
@@ -29,34 +32,32 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UpdateUser", propOrder = {
     "arg0",
-    "arg1"
+    "arg1",
+    "arg2",
+    "arg3",
+    "arg4"
 })
 public class UpdateUser {
 
-    protected User_Type arg0;
+    protected int arg0;
     protected String arg1;
+    protected String arg2;
+    protected int arg3;
+    protected String arg4;
 
     /**
      * Obtient la valeur de la propriété arg0.
      * 
-     * @return
-     *     possible object is
-     *     {@link User_Type }
-     *     
      */
-    public User_Type getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
      * Définit la valeur de la propriété arg0.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link User_Type }
-     *     
      */
-    public void setArg0(User_Type value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 
@@ -82,6 +83,70 @@ public class UpdateUser {
      */
     public void setArg1(String value) {
         this.arg1 = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété arg2.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getArg2() {
+        return arg2;
+    }
+
+    /**
+     * Définit la valeur de la propriété arg2.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setArg2(String value) {
+        this.arg2 = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété arg3.
+     * 
+     */
+    public int getArg3() {
+        return arg3;
+    }
+
+    /**
+     * Définit la valeur de la propriété arg3.
+     * 
+     */
+    public void setArg3(int value) {
+        this.arg3 = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété arg4.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getArg4() {
+        return arg4;
+    }
+
+    /**
+     * Définit la valeur de la propriété arg4.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setArg4(String value) {
+        this.arg4 = value;
     }
 
 }

@@ -28,11 +28,11 @@
 <message name="ListDepartementCongesResponse">
 <part name="parameters" element="tns:ListDepartementCongesResponse"/>
 </message>
-<message name="UpdateDemandeConge">
-<part name="parameters" element="tns:UpdateDemandeConge"/>
+<message name="AddDemandeConge">
+<part name="parameters" element="tns:AddDemandeConge"/>
 </message>
-<message name="UpdateDemandeCongeResponse">
-<part name="parameters" element="tns:UpdateDemandeCongeResponse"/>
+<message name="AddDemandeCongeResponse">
+<part name="parameters" element="tns:AddDemandeCongeResponse"/>
 </message>
 <message name="ListDemandesConges">
 <part name="parameters" element="tns:ListDemandesConges"/>
@@ -40,11 +40,11 @@
 <message name="ListDemandesCongesResponse">
 <part name="parameters" element="tns:ListDemandesCongesResponse"/>
 </message>
-<message name="AddDemandeConge">
-<part name="parameters" element="tns:AddDemandeConge"/>
+<message name="DeleteDemandeConge">
+<part name="parameters" element="tns:DeleteDemandeConge"/>
 </message>
-<message name="AddDemandeCongeResponse">
-<part name="parameters" element="tns:AddDemandeCongeResponse"/>
+<message name="DeleteDemandeCongeResponse">
+<part name="parameters" element="tns:DeleteDemandeCongeResponse"/>
 </message>
 <message name="EditDemandeConge">
 <part name="parameters" element="tns:EditDemandeConge"/>
@@ -52,11 +52,11 @@
 <message name="EditDemandeCongeResponse">
 <part name="parameters" element="tns:EditDemandeCongeResponse"/>
 </message>
-<message name="DeleteDemandeConge">
-<part name="parameters" element="tns:DeleteDemandeConge"/>
+<message name="UpdateDemandeConge">
+<part name="parameters" element="tns:UpdateDemandeConge"/>
 </message>
-<message name="DeleteDemandeCongeResponse">
-<part name="parameters" element="tns:DeleteDemandeCongeResponse"/>
+<message name="UpdateDemandeCongeResponse">
+<part name="parameters" element="tns:UpdateDemandeCongeResponse"/>
 </message>
 <portType name="DemandeConge">
 <operation name="SaveDemandeConge">
@@ -75,25 +75,25 @@
 <input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/ListDepartementCongesRequest" message="tns:ListDepartementConges"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/ListDepartementCongesResponse" message="tns:ListDepartementCongesResponse"/>
 </operation>
-<operation name="UpdateDemandeConge">
-<input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeRequest" message="tns:UpdateDemandeConge"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeResponse" message="tns:UpdateDemandeCongeResponse"/>
+<operation name="AddDemandeConge">
+<input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeRequest" message="tns:AddDemandeConge"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeResponse" message="tns:AddDemandeCongeResponse"/>
 </operation>
 <operation name="ListDemandesConges">
 <input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/ListDemandesCongesRequest" message="tns:ListDemandesConges"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/ListDemandesCongesResponse" message="tns:ListDemandesCongesResponse"/>
 </operation>
-<operation name="AddDemandeConge">
-<input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeRequest" message="tns:AddDemandeConge"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/AddDemandeCongeResponse" message="tns:AddDemandeCongeResponse"/>
+<operation name="DeleteDemandeConge">
+<input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeRequest" message="tns:DeleteDemandeConge"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeResponse" message="tns:DeleteDemandeCongeResponse"/>
 </operation>
 <operation name="EditDemandeConge">
 <input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/EditDemandeCongeRequest" message="tns:EditDemandeConge"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/EditDemandeCongeResponse" message="tns:EditDemandeCongeResponse"/>
 </operation>
-<operation name="DeleteDemandeConge">
-<input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeRequest" message="tns:DeleteDemandeConge"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/DeleteDemandeCongeResponse" message="tns:DeleteDemandeCongeResponse"/>
+<operation name="UpdateDemandeConge">
+<input wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeRequest" message="tns:UpdateDemandeConge"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/DemandeConge/UpdateDemandeCongeResponse" message="tns:UpdateDemandeCongeResponse"/>
 </operation>
 </portType>
 <binding name="DemandeCongePortBinding" type="tns:DemandeConge">
@@ -134,7 +134,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="UpdateDemandeConge">
+<operation name="AddDemandeConge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -152,7 +152,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="AddDemandeConge">
+<operation name="DeleteDemandeConge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -170,7 +170,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="DeleteDemandeConge">
+<operation name="UpdateDemandeConge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

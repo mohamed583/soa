@@ -4,31 +4,31 @@
 <xsd:import namespace="http://Controllers.cooolab.management.com/" schemaLocation="http://127.0.0.1:8091/profile?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="editProfile">
-<part name="parameters" element="tns:editProfile"/>
-</message>
-<message name="editProfileResponse">
-<part name="parameters" element="tns:editProfileResponse"/>
-</message>
 <message name="updateProfile">
 <part name="parameters" element="tns:updateProfile"/>
 </message>
 <message name="updateProfileResponse">
 <part name="parameters" element="tns:updateProfileResponse"/>
 </message>
+<message name="editProfile">
+<part name="parameters" element="tns:editProfile"/>
+</message>
+<message name="editProfileResponse">
+<part name="parameters" element="tns:editProfileResponse"/>
+</message>
 <portType name="Profile">
-<operation name="editProfile">
-<input wsam:Action="http://Controllers.cooolab.management.com/Profile/editProfileRequest" message="tns:editProfile"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/Profile/editProfileResponse" message="tns:editProfileResponse"/>
-</operation>
 <operation name="updateProfile">
 <input wsam:Action="http://Controllers.cooolab.management.com/Profile/updateProfileRequest" message="tns:updateProfile"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/Profile/updateProfileResponse" message="tns:updateProfileResponse"/>
 </operation>
+<operation name="editProfile">
+<input wsam:Action="http://Controllers.cooolab.management.com/Profile/editProfileRequest" message="tns:editProfile"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/Profile/editProfileResponse" message="tns:editProfileResponse"/>
+</operation>
 </portType>
 <binding name="ProfilePortBinding" type="tns:Profile">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="editProfile">
+<operation name="updateProfile">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="updateProfile">
+<operation name="editProfile">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

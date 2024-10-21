@@ -4,17 +4,29 @@
 <xsd:import namespace="http://Controllers.cooolab.management.com/" schemaLocation="http://127.0.0.1:8091/user?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="SaveUser">
-<part name="parameters" element="tns:SaveUser"/>
+<message name="ShowUserDemandeConge">
+<part name="parameters" element="tns:ShowUserDemandeConge"/>
 </message>
-<message name="SaveUserResponse">
-<part name="parameters" element="tns:SaveUserResponse"/>
+<message name="ShowUserDemandeCongeResponse">
+<part name="parameters" element="tns:ShowUserDemandeCongeResponse"/>
 </message>
 <message name="addUser">
 <part name="parameters" element="tns:addUser"/>
 </message>
 <message name="addUserResponse">
 <part name="parameters" element="tns:addUserResponse"/>
+</message>
+<message name="SaveUser">
+<part name="parameters" element="tns:SaveUser"/>
+</message>
+<message name="SaveUserResponse">
+<part name="parameters" element="tns:SaveUserResponse"/>
+</message>
+<message name="ListUser">
+<part name="parameters" element="tns:ListUser"/>
+</message>
+<message name="ListUserResponse">
+<part name="parameters" element="tns:ListUserResponse"/>
 </message>
 <message name="ListUsers">
 <part name="parameters" element="tns:ListUsers"/>
@@ -28,17 +40,17 @@
 <message name="EditUserResponse">
 <part name="parameters" element="tns:EditUserResponse"/>
 </message>
-<message name="DeleteUser">
-<part name="parameters" element="tns:DeleteUser"/>
-</message>
-<message name="DeleteUserResponse">
-<part name="parameters" element="tns:DeleteUserResponse"/>
-</message>
 <message name="UpdateUser">
 <part name="parameters" element="tns:UpdateUser"/>
 </message>
 <message name="UpdateUserResponse">
 <part name="parameters" element="tns:UpdateUserResponse"/>
+</message>
+<message name="DeleteUser">
+<part name="parameters" element="tns:DeleteUser"/>
+</message>
+<message name="DeleteUserResponse">
+<part name="parameters" element="tns:DeleteUserResponse"/>
 </message>
 <message name="ShowUser">
 <part name="parameters" element="tns:ShowUser"/>
@@ -47,13 +59,21 @@
 <part name="parameters" element="tns:ShowUserResponse"/>
 </message>
 <portType name="User">
-<operation name="SaveUser">
-<input wsam:Action="http://Controllers.cooolab.management.com/User/SaveUserRequest" message="tns:SaveUser"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/User/SaveUserResponse" message="tns:SaveUserResponse"/>
+<operation name="ShowUserDemandeConge">
+<input wsam:Action="http://Controllers.cooolab.management.com/User/ShowUserDemandeCongeRequest" message="tns:ShowUserDemandeConge"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/User/ShowUserDemandeCongeResponse" message="tns:ShowUserDemandeCongeResponse"/>
 </operation>
 <operation name="addUser">
 <input wsam:Action="http://Controllers.cooolab.management.com/User/addUserRequest" message="tns:addUser"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/User/addUserResponse" message="tns:addUserResponse"/>
+</operation>
+<operation name="SaveUser">
+<input wsam:Action="http://Controllers.cooolab.management.com/User/SaveUserRequest" message="tns:SaveUser"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/User/SaveUserResponse" message="tns:SaveUserResponse"/>
+</operation>
+<operation name="ListUser">
+<input wsam:Action="http://Controllers.cooolab.management.com/User/ListUserRequest" message="tns:ListUser"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/User/ListUserResponse" message="tns:ListUserResponse"/>
 </operation>
 <operation name="ListUsers">
 <input wsam:Action="http://Controllers.cooolab.management.com/User/ListUsersRequest" message="tns:ListUsers"/>
@@ -63,13 +83,13 @@
 <input wsam:Action="http://Controllers.cooolab.management.com/User/EditUserRequest" message="tns:EditUser"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/User/EditUserResponse" message="tns:EditUserResponse"/>
 </operation>
-<operation name="DeleteUser">
-<input wsam:Action="http://Controllers.cooolab.management.com/User/DeleteUserRequest" message="tns:DeleteUser"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/User/DeleteUserResponse" message="tns:DeleteUserResponse"/>
-</operation>
 <operation name="UpdateUser">
 <input wsam:Action="http://Controllers.cooolab.management.com/User/UpdateUserRequest" message="tns:UpdateUser"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/User/UpdateUserResponse" message="tns:UpdateUserResponse"/>
+</operation>
+<operation name="DeleteUser">
+<input wsam:Action="http://Controllers.cooolab.management.com/User/DeleteUserRequest" message="tns:DeleteUser"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/User/DeleteUserResponse" message="tns:DeleteUserResponse"/>
 </operation>
 <operation name="ShowUser">
 <input wsam:Action="http://Controllers.cooolab.management.com/User/ShowUserRequest" message="tns:ShowUser"/>
@@ -78,7 +98,7 @@
 </portType>
 <binding name="UserPortBinding" type="tns:User">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="SaveUser">
+<operation name="ShowUserDemandeConge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -88,6 +108,24 @@
 </output>
 </operation>
 <operation name="addUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="SaveUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ListUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -114,7 +152,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="DeleteUser">
+<operation name="UpdateUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -123,7 +161,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="UpdateUser">
+<operation name="DeleteUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

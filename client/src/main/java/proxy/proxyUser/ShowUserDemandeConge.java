@@ -1,5 +1,5 @@
 
-package proxy.proxyProfile;
+package proxy.proxyUser;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -7,16 +7,16 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour editProfile complex type.</p>
+ * <p>Classe Java pour ShowUserDemandeConge complex type.</p>
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.</p>
  * 
  * <pre>{@code
- * <complexType name="editProfile">
+ * <complexType name="ShowUserDemandeConge">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
@@ -26,34 +26,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "editProfile", propOrder = {
+@XmlType(name = "ShowUserDemandeConge", propOrder = {
     "arg0"
 })
-public class EditProfile {
+public class ShowUserDemandeConge {
 
-    protected String arg0;
+    protected int arg0;
 
     /**
      * Obtient la valeur de la propriété arg0.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
      * Définit la valeur de la propriété arg0.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setArg0(String value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 

@@ -30,13 +30,15 @@ public class ObjectFactory {
     private static final QName _Departement_QNAME = new QName("http://Controllers.cooolab.management.com/", "Departement");
     private static final QName _EditUser_QNAME = new QName("http://Controllers.cooolab.management.com/", "EditUser");
     private static final QName _EditUserResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "EditUserResponse");
+    private static final QName _ListUser_QNAME = new QName("http://Controllers.cooolab.management.com/", "ListUser");
+    private static final QName _ListUserResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "ListUserResponse");
     private static final QName _ListUsers_QNAME = new QName("http://Controllers.cooolab.management.com/", "ListUsers");
     private static final QName _ListUsersResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "ListUsersResponse");
-    private static final QName _SaveDemandeConge_QNAME = new QName("http://Controllers.cooolab.management.com/", "SaveDemandeConge");
-    private static final QName _SaveDemandeCongeResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "SaveDemandeCongeResponse");
     private static final QName _SaveUser_QNAME = new QName("http://Controllers.cooolab.management.com/", "SaveUser");
     private static final QName _SaveUserResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "SaveUserResponse");
     private static final QName _ShowUser_QNAME = new QName("http://Controllers.cooolab.management.com/", "ShowUser");
+    private static final QName _ShowUserDemandeConge_QNAME = new QName("http://Controllers.cooolab.management.com/", "ShowUserDemandeConge");
+    private static final QName _ShowUserDemandeCongeResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "ShowUserDemandeCongeResponse");
     private static final QName _ShowUserResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "ShowUserResponse");
     private static final QName _UpdateUser_QNAME = new QName("http://Controllers.cooolab.management.com/", "UpdateUser");
     private static final QName _UpdateUserResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "UpdateUserResponse");
@@ -112,6 +114,26 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListUser }
+     * 
+     * @return
+     *     the new instance of {@link ListUser }
+     */
+    public ListUser createListUser() {
+        return new ListUser();
+    }
+
+    /**
+     * Create an instance of {@link ListUserResponse }
+     * 
+     * @return
+     *     the new instance of {@link ListUserResponse }
+     */
+    public ListUserResponse createListUserResponse() {
+        return new ListUserResponse();
+    }
+
+    /**
      * Create an instance of {@link ListUsers }
      * 
      * @return
@@ -132,23 +154,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SaveDemandeConge }
+     * Create an instance of {@link SaveUser }
      * 
      * @return
-     *     the new instance of {@link SaveDemandeConge }
+     *     the new instance of {@link SaveUser }
      */
-    public SaveDemandeConge createSaveDemandeConge() {
-        return new SaveDemandeConge();
+    public SaveUser createSaveUser() {
+        return new SaveUser();
     }
 
     /**
-     * Create an instance of {@link SaveDemandeCongeResponse }
+     * Create an instance of {@link SaveUserResponse }
      * 
      * @return
-     *     the new instance of {@link SaveDemandeCongeResponse }
+     *     the new instance of {@link SaveUserResponse }
      */
-    public SaveDemandeCongeResponse createSaveDemandeCongeResponse() {
-        return new SaveDemandeCongeResponse();
+    public SaveUserResponse createSaveUserResponse() {
+        return new SaveUserResponse();
     }
 
     /**
@@ -159,6 +181,26 @@ public class ObjectFactory {
      */
     public ShowUser createShowUser() {
         return new ShowUser();
+    }
+
+    /**
+     * Create an instance of {@link ShowUserDemandeConge }
+     * 
+     * @return
+     *     the new instance of {@link ShowUserDemandeConge }
+     */
+    public ShowUserDemandeConge createShowUserDemandeConge() {
+        return new ShowUserDemandeConge();
+    }
+
+    /**
+     * Create an instance of {@link ShowUserDemandeCongeResponse }
+     * 
+     * @return
+     *     the new instance of {@link ShowUserDemandeCongeResponse }
+     */
+    public ShowUserDemandeCongeResponse createShowUserDemandeCongeResponse() {
+        return new ShowUserDemandeCongeResponse();
     }
 
     /**
@@ -300,6 +342,32 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListUser }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListUser }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "ListUser")
+    public JAXBElement<ListUser> createListUser(ListUser value) {
+        return new JAXBElement<>(_ListUser_QNAME, ListUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListUserResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListUserResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "ListUserResponse")
+    public JAXBElement<ListUserResponse> createListUserResponse(ListUserResponse value) {
+        return new JAXBElement<>(_ListUserResponse_QNAME, ListUserResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListUsers }{@code >}
      * 
      * @param value
@@ -326,55 +394,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SaveDemandeConge }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SaveUser }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SaveDemandeConge }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "SaveDemandeConge")
-    public JAXBElement<SaveDemandeConge> createSaveDemandeConge(SaveDemandeConge value) {
-        return new JAXBElement<>(_SaveDemandeConge_QNAME, SaveDemandeConge.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SaveDemandeCongeResponse }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SaveDemandeCongeResponse }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "SaveDemandeCongeResponse")
-    public JAXBElement<SaveDemandeCongeResponse> createSaveDemandeCongeResponse(SaveDemandeCongeResponse value) {
-        return new JAXBElement<>(_SaveDemandeCongeResponse_QNAME, SaveDemandeCongeResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SaveDemandeConge }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SaveDemandeConge }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link SaveUser }{@code >}
      */
     @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "SaveUser")
-    public JAXBElement<SaveDemandeConge> createSaveUser(SaveDemandeConge value) {
-        return new JAXBElement<>(_SaveUser_QNAME, SaveDemandeConge.class, null, value);
+    public JAXBElement<SaveUser> createSaveUser(SaveUser value) {
+        return new JAXBElement<>(_SaveUser_QNAME, SaveUser.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SaveDemandeCongeResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SaveUserResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SaveDemandeCongeResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link SaveUserResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "SaveUserResponse")
-    public JAXBElement<SaveDemandeCongeResponse> createSaveUserResponse(SaveDemandeCongeResponse value) {
-        return new JAXBElement<>(_SaveUserResponse_QNAME, SaveDemandeCongeResponse.class, null, value);
+    public JAXBElement<SaveUserResponse> createSaveUserResponse(SaveUserResponse value) {
+        return new JAXBElement<>(_SaveUserResponse_QNAME, SaveUserResponse.class, null, value);
     }
 
     /**
@@ -388,6 +430,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "ShowUser")
     public JAXBElement<ShowUser> createShowUser(ShowUser value) {
         return new JAXBElement<>(_ShowUser_QNAME, ShowUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ShowUserDemandeConge }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ShowUserDemandeConge }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "ShowUserDemandeConge")
+    public JAXBElement<ShowUserDemandeConge> createShowUserDemandeConge(ShowUserDemandeConge value) {
+        return new JAXBElement<>(_ShowUserDemandeConge_QNAME, ShowUserDemandeConge.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ShowUserDemandeCongeResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ShowUserDemandeCongeResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "ShowUserDemandeCongeResponse")
+    public JAXBElement<ShowUserDemandeCongeResponse> createShowUserDemandeCongeResponse(ShowUserDemandeCongeResponse value) {
+        return new JAXBElement<>(_ShowUserDemandeCongeResponse_QNAME, ShowUserDemandeCongeResponse.class, null, value);
     }
 
     /**

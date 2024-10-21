@@ -67,10 +67,13 @@ public class DepartmentController {
 
     }
     @WebMethod(operationName = "showDepartment")
-    public Object[] showDepartment(int id) {
-        Departement department = departmentService.getDepartmentById(id);
-        List<User> users = userService.getUsersByDepartment(id);
-        return new Object[] {users, department} ;
+    public Departement showDepartment(int id) {
+        return departmentService.getDepartmentById(id);
     }
+    @WebMethod(operationName = "showDepartmentUsers")
+    public List<User> showDepartmentUsers(int id) {
+        return userService.getUsersByDepartment(id);
+    }
+
 
 }

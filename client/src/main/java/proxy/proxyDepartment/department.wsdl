@@ -4,11 +4,11 @@
 <xsd:import namespace="http://Controllers.cooolab.management.com/" schemaLocation="http://127.0.0.1:8091/department?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="AddDepartment">
-<part name="parameters" element="tns:AddDepartment"/>
+<message name="SaveDepartment">
+<part name="parameters" element="tns:SaveDepartment"/>
 </message>
-<message name="AddDepartmentResponse">
-<part name="parameters" element="tns:AddDepartmentResponse"/>
+<message name="SaveDepartmentResponse">
+<part name="parameters" element="tns:SaveDepartmentResponse"/>
 </message>
 <message name="DeleteDepartment">
 <part name="parameters" element="tns:DeleteDepartment"/>
@@ -22,11 +22,11 @@
 <message name="ListDepartmentsResponse">
 <part name="parameters" element="tns:ListDepartmentsResponse"/>
 </message>
-<message name="SaveDepartment">
-<part name="parameters" element="tns:SaveDepartment"/>
+<message name="AddDepartment">
+<part name="parameters" element="tns:AddDepartment"/>
 </message>
-<message name="SaveDepartmentResponse">
-<part name="parameters" element="tns:SaveDepartmentResponse"/>
+<message name="AddDepartmentResponse">
+<part name="parameters" element="tns:AddDepartmentResponse"/>
 </message>
 <message name="EditDepartment">
 <part name="parameters" element="tns:EditDepartment"/>
@@ -46,10 +46,16 @@
 <message name="showDepartmentResponse">
 <part name="parameters" element="tns:showDepartmentResponse"/>
 </message>
+<message name="showDepartmentUsers">
+<part name="parameters" element="tns:showDepartmentUsers"/>
+</message>
+<message name="showDepartmentUsersResponse">
+<part name="parameters" element="tns:showDepartmentUsersResponse"/>
+</message>
 <portType name="Department">
-<operation name="AddDepartment">
-<input wsam:Action="http://Controllers.cooolab.management.com/Department/AddDepartmentRequest" message="tns:AddDepartment"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/Department/AddDepartmentResponse" message="tns:AddDepartmentResponse"/>
+<operation name="SaveDepartment">
+<input wsam:Action="http://Controllers.cooolab.management.com/Department/SaveDepartmentRequest" message="tns:SaveDepartment"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/Department/SaveDepartmentResponse" message="tns:SaveDepartmentResponse"/>
 </operation>
 <operation name="DeleteDepartment">
 <input wsam:Action="http://Controllers.cooolab.management.com/Department/DeleteDepartmentRequest" message="tns:DeleteDepartment"/>
@@ -59,9 +65,9 @@
 <input wsam:Action="http://Controllers.cooolab.management.com/Department/ListDepartmentsRequest" message="tns:ListDepartments"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/Department/ListDepartmentsResponse" message="tns:ListDepartmentsResponse"/>
 </operation>
-<operation name="SaveDepartment">
-<input wsam:Action="http://Controllers.cooolab.management.com/Department/SaveDepartmentRequest" message="tns:SaveDepartment"/>
-<output wsam:Action="http://Controllers.cooolab.management.com/Department/SaveDepartmentResponse" message="tns:SaveDepartmentResponse"/>
+<operation name="AddDepartment">
+<input wsam:Action="http://Controllers.cooolab.management.com/Department/AddDepartmentRequest" message="tns:AddDepartment"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/Department/AddDepartmentResponse" message="tns:AddDepartmentResponse"/>
 </operation>
 <operation name="EditDepartment">
 <input wsam:Action="http://Controllers.cooolab.management.com/Department/EditDepartmentRequest" message="tns:EditDepartment"/>
@@ -75,10 +81,14 @@
 <input wsam:Action="http://Controllers.cooolab.management.com/Department/showDepartmentRequest" message="tns:showDepartment"/>
 <output wsam:Action="http://Controllers.cooolab.management.com/Department/showDepartmentResponse" message="tns:showDepartmentResponse"/>
 </operation>
+<operation name="showDepartmentUsers">
+<input wsam:Action="http://Controllers.cooolab.management.com/Department/showDepartmentUsersRequest" message="tns:showDepartmentUsers"/>
+<output wsam:Action="http://Controllers.cooolab.management.com/Department/showDepartmentUsersResponse" message="tns:showDepartmentUsersResponse"/>
+</operation>
 </portType>
 <binding name="DepartmentPortBinding" type="tns:Department">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="AddDepartment">
+<operation name="SaveDepartment">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -105,7 +115,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="SaveDepartment">
+<operation name="AddDepartment">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -133,6 +143,15 @@
 </output>
 </operation>
 <operation name="showDepartment">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="showDepartmentUsers">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

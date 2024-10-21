@@ -8,12 +8,12 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour addUserResponse complex type.</p>
+ * <p>Classe Java pour ListUserResponse complex type.</p>
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.</p>
  * 
  * <pre>{@code
- * <complexType name="addUserResponse">
+ * <complexType name="ListUserResponse">
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
@@ -27,10 +27,10 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "addUserResponse", propOrder = {
+@XmlType(name = "ListUserResponse", propOrder = {
     "_return"
 })
-public class AddUserResponse {
+public class ListUserResponse {
 
     @XmlElement(name = "return")
     protected User_Type _return;

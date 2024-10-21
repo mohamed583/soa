@@ -1,7 +1,7 @@
 
 package proxy.proxyDemandeConge;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlSchemaType;
@@ -10,9 +10,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour demandeConge complex type.</p>
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.</p>
- * 
+ *
+ * <p>Le fragment de schï¿½ma suivant indique le contenu attendu figurant dans cette classe.</p>
+ *
  * <pre>{@code
  * <complexType name="demandeConge">
  *   <complexContent>
@@ -28,8 +28,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   </complexContent>
  * </complexType>
  * }</pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "demandeConge", propOrder = {
@@ -43,78 +43,78 @@ public class DemandeConge_Type {
 
     protected int id;
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDate;
+    protected String startDate;
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDate;
+    protected String endDate;
     protected String status;
     protected User employee;
 
     /**
-     * Obtient la valeur de la propriété id.
-     * 
+     * Obtient la valeur de la propriï¿½tï¿½ id.
+     *
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Définit la valeur de la propriété id.
-     * 
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ id.
+     *
      */
     public void setId(int value) {
         this.id = value;
     }
 
     /**
-     * Obtient la valeur de la propriété startDate.
-     * 
+     * Obtient la valeur de la propriï¿½tï¿½ startDate.
+     *
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *     {@link String }
+     *
      */
-    public XMLGregorianCalendar getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
     /**
-     * Définit la valeur de la propriété startDate.
-     * 
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ startDate.
+     *
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *     {@link String }
+     *
      */
-    public void setStartDate(XMLGregorianCalendar value) {
+    public void setStartDate(String value) {
         this.startDate = value;
     }
 
     /**
-     * Obtient la valeur de la propriété endDate.
-     * 
+     * Obtient la valeur de la propriï¿½tï¿½ endDate.
+     *
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *     {@link String }
+     *
      */
-    public XMLGregorianCalendar getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
     /**
-     * Définit la valeur de la propriété endDate.
-     * 
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ endDate.
+     *
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *     {@link String }
+     *
      */
-    public void setEndDate(XMLGregorianCalendar value) {
+    public void setEndDate(String value) {
         this.endDate = value;
     }
 
     /**
-     * Obtient la valeur de la propriété status.
+     * Obtient la valeur de la propriï¿½tï¿½ status.
      * 
      * @return
      *     possible object is
@@ -126,7 +126,7 @@ public class DemandeConge_Type {
     }
 
     /**
-     * Définit la valeur de la propriété status.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ status.
      * 
      * @param value
      *     allowed object is
@@ -138,7 +138,7 @@ public class DemandeConge_Type {
     }
 
     /**
-     * Obtient la valeur de la propriété employee.
+     * Obtient la valeur de la propriï¿½tï¿½ employee.
      * 
      * @return
      *     possible object is
@@ -150,7 +150,7 @@ public class DemandeConge_Type {
     }
 
     /**
-     * Définit la valeur de la propriété employee.
+     * Dï¿½finit la valeur de la propriï¿½tï¿½ employee.
      * 
      * @param value
      *     allowed object is

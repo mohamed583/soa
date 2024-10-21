@@ -18,6 +18,9 @@ public class DepartmentService {
     public Departement getDepartmentById(int id){
         return departmentRepository.findById(id).get();
     }
+    public Departement getDepartmentByName(String name){
+        return departmentRepository.findByName(name);
+    }
     public void saveDepartment(Departement department){
         departmentRepository.save(department);
     }

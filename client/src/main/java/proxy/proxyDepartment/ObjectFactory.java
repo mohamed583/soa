@@ -43,6 +43,8 @@ public class ObjectFactory {
     private static final QName _User_QNAME = new QName("http://Controllers.cooolab.management.com/", "User");
     private static final QName _ShowDepartment_QNAME = new QName("http://Controllers.cooolab.management.com/", "showDepartment");
     private static final QName _ShowDepartmentResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "showDepartmentResponse");
+    private static final QName _ShowDepartmentUsers_QNAME = new QName("http://Controllers.cooolab.management.com/", "showDepartmentUsers");
+    private static final QName _ShowDepartmentUsersResponse_QNAME = new QName("http://Controllers.cooolab.management.com/", "showDepartmentUsersResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: proxy.proxyDepartment
@@ -219,6 +221,26 @@ public class ObjectFactory {
      */
     public ShowDepartmentResponse createShowDepartmentResponse() {
         return new ShowDepartmentResponse();
+    }
+
+    /**
+     * Create an instance of {@link ShowDepartmentUsers }
+     * 
+     * @return
+     *     the new instance of {@link ShowDepartmentUsers }
+     */
+    public ShowDepartmentUsers createShowDepartmentUsers() {
+        return new ShowDepartmentUsers();
+    }
+
+    /**
+     * Create an instance of {@link ShowDepartmentUsersResponse }
+     * 
+     * @return
+     *     the new instance of {@link ShowDepartmentUsersResponse }
+     */
+    public ShowDepartmentUsersResponse createShowDepartmentUsersResponse() {
+        return new ShowDepartmentUsersResponse();
     }
 
     /**
@@ -466,6 +488,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "showDepartmentResponse")
     public JAXBElement<ShowDepartmentResponse> createShowDepartmentResponse(ShowDepartmentResponse value) {
         return new JAXBElement<>(_ShowDepartmentResponse_QNAME, ShowDepartmentResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ShowDepartmentUsers }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ShowDepartmentUsers }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "showDepartmentUsers")
+    public JAXBElement<ShowDepartmentUsers> createShowDepartmentUsers(ShowDepartmentUsers value) {
+        return new JAXBElement<>(_ShowDepartmentUsers_QNAME, ShowDepartmentUsers.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ShowDepartmentUsersResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ShowDepartmentUsersResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://Controllers.cooolab.management.com/", name = "showDepartmentUsersResponse")
+    public JAXBElement<ShowDepartmentUsersResponse> createShowDepartmentUsersResponse(ShowDepartmentUsersResponse value) {
+        return new JAXBElement<>(_ShowDepartmentUsersResponse_QNAME, ShowDepartmentUsersResponse.class, null, value);
     }
 
 }

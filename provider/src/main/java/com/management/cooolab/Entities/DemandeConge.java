@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
