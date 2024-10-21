@@ -28,7 +28,6 @@ public class UserController {
         List<User_Type> users = new ArrayList<>();
         for (int userId : usersId) {
             users.add(proxy.listUser(userId));
-            System.out.println(proxy.listUser(userId));
         }
         model.addAttribute("users", users);
         return "User/ShowAll";

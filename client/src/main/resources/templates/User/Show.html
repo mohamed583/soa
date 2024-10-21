@@ -66,8 +66,8 @@
                 <tbody>
                 <tr th:each="demande : ${demandesConges}">
                     <td th:text="${demande.id}"></td>
-                    <td th:text="${#dates.format(demande.startDate, 'yyyy-MM-dd')}"></td>
-                    <td th:text="${#dates.format(demande.endDate, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${demande.startDate}"></td>
+                    <td th:text="${demande.endDate}"></td>
                     <td th:text="${demande.status}"></td>
                 </tr>
                 </tbody>
